@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HHTestTask2.Domain\HHTestTask2.Domain.csproj" />
+    <ProjectReference Include="..\HHTestTask2.Infrastructure\HHTestTask2.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

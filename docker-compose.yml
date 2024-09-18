@@ -1,0 +1,29 @@
+networks:
+  hhtest-dev:
+    driver: bridge
+
+volumes:
+  db-data:
+
+services:
+  hhtesttask2.api:
+    image: ${DOCKER_REGISTRY-}hhtesttask2api
+    build:
+      context: .
+      dockerfile: HHTestTask2/Dockerfile
+    networks:
+      - hhtest-dev
+
+  postgres_db:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - hhtest-dev
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
